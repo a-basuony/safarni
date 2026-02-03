@@ -19,25 +19,25 @@ export default function HotelBooking() {
   const filteredRecommendations = useMemo(() => {
     if (!searchQuery.trim()) return recommendationHotels;
     return recommendationHotels.filter((hotel) =>
-      hotel.name.toLowerCase().includes(searchQuery.toLowerCase())
+      hotel.name.toLowerCase().includes(searchQuery.toLowerCase()),
     );
   }, [searchQuery]);
 
   const filteredNearby = useMemo(() => {
     if (!searchQuery.trim()) return nearbyHotels;
     return nearbyHotels.filter((hotel) =>
-      hotel.name.toLowerCase().includes(searchQuery.toLowerCase())
+      hotel.name.toLowerCase().includes(searchQuery.toLowerCase()),
     );
   }, [searchQuery]);
 
   const filteredRooms = useMemo(() => {
     if (!searchQuery.trim()) return availableRooms;
     return availableRooms.filter((room) =>
-      room.name.toLowerCase().includes(searchQuery.toLowerCase())
+      room.name.toLowerCase().includes(searchQuery.toLowerCase()),
     );
   }, [searchQuery]);
 
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
     ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -84,4 +84,3 @@ export default function HotelBooking() {
     </div>
   );
 }
-

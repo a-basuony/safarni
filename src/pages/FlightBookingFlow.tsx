@@ -5,7 +5,7 @@ import type { BookingFormData, Flight } from "@/types/flight";
 import { BoardingPass } from "@/component/booking/BoardingPass/BoardingPass";
 import FlightBooking from "@/component/booking/flightBooking/FlightBooking";
 
-import { MOCK_FLIGHTS } from "@/constants/mockData";
+// removed unused MOCK_FLIGHTS import
 
 type FlowStep = "search" | "flight-list" | "seat-selection" | "boarding-pass";
 

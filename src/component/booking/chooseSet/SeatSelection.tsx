@@ -21,7 +21,6 @@ export const SeatSelection: React.FC<SeatSelectionProps> = ({
   const unavailableSeats = [
     1, 2, 3, 5, 7, 11, 12, 13, 14, 15, 18, 19, 21, 22, 23, 25, 27, 30,
   ];
-  const availableSeats = [4, 6, 8, 9, 10, 16, 17, 20, 24, 26, 28, 29];
 
   const handleSeatClick = (num: number) => {
     if (unavailableSeats.includes(num)) return;

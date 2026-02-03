@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { TripTypeSelector } from "./TripTypeSelector";
 import { Input } from "../../ui/Input";
 import { Button } from "../../ui/Button";
-import type { BookingFormData, TripType } from "../../../types/flight";
+import type { BookingFormData } from "../../../types/flight";
 import { PASSENGER_OPTIONS } from "../../../constants/mockData";
 
 interface BookingFormProps {

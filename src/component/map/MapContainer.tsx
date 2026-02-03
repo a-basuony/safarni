@@ -51,16 +51,16 @@ const createCustomIcon = (category: PlaceCategory) => {
   const iconHTML = renderToString(
     <div
       className={`relative flex items-center justify-center w-10 h-10 ${getColors(
-        category
+        category,
       )} text-white rounded-full border-2 border-white shadow-xl transform transition-all hover:scale-110`}
     >
       {getIcon(category)}
       <div
         className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 ${getColors(
-          category
+          category,
         )} rotate-45 border-b border-r border-white`}
       ></div>
-    </div>
+    </div>,
   );
 
   return L.divIcon({
@@ -70,14 +70,6 @@ const createCustomIcon = (category: PlaceCategory) => {
     iconAnchor: [20, 40],
     popupAnchor: [0, -40],
   });
-};
-
-const MapUpdater: React.FC<{ center: [number, number] }> = ({ center }) => {
-  const map = useMap();
-  useEffect(() => {
-    map.flyTo(center, 13, { duration: 1.5 });
-  }, [center, map]);
-  return null;
 };
 
 const MapContainer: React.FC<MapProps> = ({ places }) => {
@@ -139,7 +131,7 @@ const MapContainer: React.FC<MapProps> = ({ places }) => {
           onClick={(e) => {
             e.stopPropagation();
             const mapElement = document.querySelector(
-              ".leaflet-container"
+              ".leaflet-container",
             ) as any;
             if (mapElement && mapElement._leaflet_id) {
               const map = (window as any).L.DomUtil.get(mapElement)._map;
@@ -154,7 +146,7 @@ const MapContainer: React.FC<MapProps> = ({ places }) => {
           onClick={(e) => {
             e.stopPropagation();
             const mapElement = document.querySelector(
-              ".leaflet-container"
+              ".leaflet-container",
             ) as any;
             if (mapElement && mapElement._leaflet_id) {
               const map = (window as any).L.DomUtil.get(mapElement)._map;

@@ -17,6 +17,8 @@ export const BoardingPass: React.FC<BoardingPassProps> = ({
   flight,
   seatNumber,
 }) => {
+  // reference `flight` to avoid TS6133 when it's not yet used
+  void flight;
   return (
     <div className="w-full max-w-6xl mx-auto py-6 animate-in fade-in slide-in-from-right-4 duration-500">
       {/* Header with Back Button */}

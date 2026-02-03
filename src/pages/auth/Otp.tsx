@@ -5,16 +5,8 @@ import { ChevronLeft, Mail, CheckCircle, AlertCircle } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import {
-  verifyOtp,
-  forgotPassword,
-  verifyReactivationOtp,
-  resendOtp,
-} from "@/services/post";
-import type {
-  VerifyOtpPayload,
-  VerifyReactivationOtpPayload,
-} from "@/services/post";
+import { verifyOtp, forgotPassword, resendOtp } from "@/services/post";
+import type { VerifyOtpPayload } from "@/services/post";
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "react-toastify";
 
@@ -82,7 +74,7 @@ export default function Otp() {
 
   const handleKeyDown = (
     index: number,
-    e: React.KeyboardEvent<HTMLInputElement>
+    e: React.KeyboardEvent<HTMLInputElement>,
   ) => {
     if (e.key === "Backspace" && otp[index] === "" && index > 0) {
       inputRefs.current[index - 1]?.focus();
@@ -115,7 +107,7 @@ export default function Otp() {
         if (response.success) {
           toast.success(
             response.message ||
-              "Your account has been reactivated! Please login to continue."
+              "Your account has been reactivated! Please login to continue.",
           );
           navigate("/login");
         } else {
@@ -144,8 +136,8 @@ export default function Otp() {
         setTimeout(() => {
           navigate(
             `/newpassword?email=${encodeURIComponent(
-              email
-            )}&code=${encodeURIComponent(data.otp)}`
+              email,
+            )}&code=${encodeURIComponent(data.otp)}`,
           );
         }, 1500);
       } else {
@@ -319,8 +311,8 @@ export default function Otp() {
                       errors.otp
                         ? "border-red-500"
                         : message.type === "success"
-                        ? "border-green-500"
-                        : "border-gray-200"
+                          ? "border-green-500"
+                          : "border-gray-200"
                     }`}
                   />
                 ))}
