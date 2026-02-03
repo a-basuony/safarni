@@ -6,6 +6,8 @@ A Vite + React + TypeScript starter configured with Tailwind, ESLint, and common
 
 ## 🚀 Quick Start
 
+demo : (https://safarni-wza1.vercel.app/GetStarted)
+
 Prerequisites:
 
 - Node.js LTS (>= 18) and npm (or pnpm/yarn)
